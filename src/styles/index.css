@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	vertical-align: baseline;
+    font-family: "Open Sans", sans-serif;
+    line-height: 1.2;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.widget-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock {
+    background-color: rgb(172, 130, 52);
+    padding: 20px 160px;
+    border-radius: 20px;
+    border: 3px solid black;
+    color: white;
+}
+.clock-name {
+    padding-bottom: 5px;
+}
+.clock-time p {
+    display: flex;
+    position: relative;
+    right: 150px;
+    justify-content: space-between;
+}
+.clock-date p {
+    display: flex;
+    position: relative;
+    right: 150px;
+    justify-content: space-between;
+}
+.clock-time p span {
+    position: relative;
+    left: 300px;
+    top: 7px;
+    font-weight: bold;
+    font-size: 23px;
+}
+.clock-date p span {
+    position: relative;
+    left: 300px;
+    top: 7px;
+    font-weight: bold;
+    font-size: 23px
+}
+.loader {
+    margin: auto;
+    border: 10px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 10px solid #FF7A59;
+    width: 50px;
+    height: 50px;
+    animation: spinner 1s linear infinite;
+}
+.weather-loading {
+    padding-top: 20px;
+}
+@keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }  
+}
+
+.weather {
+    background-color: rgb(74, 167, 74);
+    border-radius: 20px;
+    border: 3px solid black;
+    color: white;
+    width: 500px;
+    height: auto;
+}
+.weather a {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 24px;
+    margin: 7px;
+}
+.weather a span {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 24px;
+    color: #7b2634;
+}
+
+.weather-header{
+    margin-top: 20px;
+}
+.search-items {
+    padding-top: 10px;
+}
+.search {
+    background-color: violet;
+    border-radius: 20px;
+    border: 3px solid black;
+    color: white;
+    width: 200px;
+    height: auto;
+}
+.search input {
+    margin: 5px 25px;
+    border: 2px solid black;
+    border-radius: 4px;
+}
+.search input:focus  {
+    border: 2px solid rgb(65, 227, 65);
+}
+.search input:hover  {
+    border: 2px solid rgb(65, 227, 65);
+}
+.search-items {
+    text-align: center;
+    margin-bottom: 10px;
+}
+.search-items li {
+    cursor: pointer;
+}
+
+.example-enter {
+    opacity: 0.01;
+}
+
+.example-enter.example-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.example-leave {
+    opacity: 1;
+}
+
+.example-leave.example-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+.auto-enter {
+    opacity: 0.01;
+    transform: rotate(360deg);
+    color: #7b2634;
+}
+.auto-enter.auto-enter-active {
+    opacity: 0.9;
+    transform: rotate(0deg);
+    transition: opacity 500ms, transform 500ms;
+    color: #DA1131;
+}
+.auto-leave {
+    opacity: 0.9;
+    transform: rotate(360deg);
+    color: #E5ED03;
+}
+
+.auto-leave.auto-leave-active {
+    opacity: 0.01;
+    transform: rotate(0deg);
+    transition: opacity 500ms, transform 500ms;
+    color: #A4FE20;
+}
