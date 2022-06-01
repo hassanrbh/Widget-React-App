@@ -7,9 +7,18 @@ export default class Search extends React.Component {
 
         this.state = {
             inputVal: "",
+            isUserLoggedIn: false,
         }
         this.captureInput = this.captureInput.bind(this)
         this.captureSelectedTag = this.captureSelectedTag.bind(this)
+        this.changeUserLogged = this.changeUserLogged.bind(this)
+    }
+
+    changeUserLogged(event) {
+        event.preventDefault();
+        this.setState(prevState => ({
+            isUserLoggedIn: !prevState.isUserLoggedIn,
+        }))
     }
 
     changes() {
@@ -43,7 +52,7 @@ export default class Search extends React.Component {
                 person === "Non Matches Found" ? {color: "red"} : null
             }>{person}</li>
         ))
-
+        const LoggedIn = this.state.isUserLoggedIn;
         return (
             <div>
                 <h1>Search Comp</h1>
@@ -57,6 +66,11 @@ export default class Search extends React.Component {
                             {items}
                         </CSSTransitionGroup>
                     </ul>
+                </div>
+                <div>
+                    The User is <b>{LoggedIn ? "Logged In" : "Not logged in"}</b>
+                    <br />
+                    <input type="button" onClick={this.changeUserLogged} value="Show User"></input>
                 </div>
             </div>
         )
